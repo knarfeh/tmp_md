@@ -41,7 +41,7 @@
 <link href="/tmp_md/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithm," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="冒泡排序：12345678910111213141516def bubble_sort(list_to_sort):    iter_len = len(list_to_sort)    if iter_len &amp;lt; 2:        return iter_len    for i in range(iter_len):        for j in range(iter_len-i-1">
+<meta name="description" content="用装饰器实现123456789101112131415161718192021def singleton(cls):    INSTANCES = &amp;#123;&amp;#125;    def _singleton(*args, **kwargs):        if cls not in INSTANCES:            INSTANCES[cls] = cls(*args, **kwar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法总结">
-<meta property="og:url" content="http://knarfeh.github.io/tmp_md/2015/05/15/排序算法总结/index.html">
+<meta property="og:title" content="Python单例模式">
+<meta property="og:url" content="http://knarfeh.github.io/tmp_md/2016/07/08/Python单例模式/index.html">
 <meta property="og:site_name" content="Frank's Private Notes">
-<meta property="og:description" content="冒泡排序：12345678910111213141516def bubble_sort(list_to_sort):    iter_len = len(list_to_sort)    if iter_len &amp;lt; 2:        return iter_len    for i in range(iter_len):        for j in range(iter_len-i-1">
-<meta property="og:updated_time" content="2016-07-07T12:44:21.000Z">
+<meta property="og:description" content="用装饰器实现123456789101112131415161718192021def singleton(cls):    INSTANCES = &amp;#123;&amp;#125;    def _singleton(*args, **kwargs):        if cls not in INSTANCES:            INSTANCES[cls] = cls(*args, **kwar">
+<meta property="og:updated_time" content="2016-07-08T12:24:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法总结">
-<meta name="twitter:description" content="冒泡排序：12345678910111213141516def bubble_sort(list_to_sort):    iter_len = len(list_to_sort)    if iter_len &amp;lt; 2:        return iter_len    for i in range(iter_len):        for j in range(iter_len-i-1">
+<meta name="twitter:title" content="Python单例模式">
+<meta name="twitter:description" content="用装饰器实现123456789101112131415161718192021def singleton(cls):    INSTANCES = &amp;#123;&amp;#125;    def _singleton(*args, **kwargs):        if cls not in INSTANCES:            INSTANCES[cls] = cls(*args, **kwar">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> 排序算法总结 | Frank's Private Notes </title>
+  <title> Python单例模式 | Frank's Private Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -211,7 +211,7 @@
             
             
               
-                排序算法总结
+                Python单例模式
               
             
           </h1>
@@ -223,8 +223,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-05-15T13:23:44+08:00" content="2015-05-15">
-              2015-05-15
+            <time itemprop="dateCreated" datetime="2016-07-08T19:30:19+08:00" content="2016-07-08">
+              2016-07-08
             </time>
           </span>
 
@@ -234,8 +234,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/tmp_md/2015/05/15/排序算法总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/15/排序算法总结/" itemprop="commentsCount"></span>
+                <a href="/tmp_md/2016/07/08/Python单例模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/08/Python单例模式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -257,11 +257,8 @@
       
 
       
-        <h2 id="冒泡排序："><a href="#冒泡排序：" class="headerlink" title="冒泡排序："></a>冒泡排序：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(list_to_sort)</span>:</span></span><br><span class="line">    iter_len = len(list_to_sort)</span><br><span class="line">    <span class="keyword">if</span> iter_len &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> iter_len</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(iter_len):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(iter_len-i<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> list_to_sort[j] &gt; list_to_sort[j+<span class="number">1</span>]:</span><br><span class="line">                list_to_sort[j], list_to_sort[j+<span class="number">1</span>] = list_to_sort[j+<span class="number">1</span>], list_to_sort[j]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list_to_sort</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list_to_sort = [<span class="number">4</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> bubble_sort(list_to_sort)</span><br></pre></td></tr></table></figure>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span><span class="params">(list_to_sort)</span>:</span></span><br><span class="line">    iter_len = len(list_to_sort)</span><br><span class="line">    <span class="keyword">if</span> iter_len &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> list_to_sort</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(iter_len<span class="number">-1</span>):</span><br><span class="line">        smallest = list_to_sort[i]</span><br><span class="line">        position = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, iter_len):</span><br><span class="line">            <span class="keyword">if</span> list_to_sort[j] &lt; smallest:</span><br><span class="line">                smallest = list_to_sort[j]</span><br><span class="line">                position = j</span><br><span class="line">        <span class="keyword">if</span> i != position:</span><br><span class="line">            list_to_sort[i], list_to_sort[position] = list_to_sort[position], list_to_sort[i]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list_to_sort</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list_to_sort = [<span class="number">3</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">7</span>, ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> select_sort(list_to_sort)</span><br></pre></td></tr></table></figure>
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python2</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span><span class="params">(list_to_sort)</span>:</span></span><br><span class="line">    iter_len = len(list_to_sort)</span><br><span class="line">    <span class="keyword">if</span> iter_len &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> list_to_sort</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, iter_len):</span><br><span class="line">        key = list_to_sort[i]</span><br><span class="line">        j = i - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> j &gt;=<span class="number">0</span> <span class="keyword">and</span> list_to_sort[j] &gt; key:</span><br><span class="line">            list_to_sort[j+<span class="number">1</span>] = list_to_sort[j]</span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        list_to_sort[j+<span class="number">1</span>] = key</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list_to_sort</span><br><span class="line"></span><br><span class="line">list_to_sort = [<span class="number">5</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">6</span>]</span><br><span class="line"><span class="keyword">print</span> insertion_sort(list_to_sort)</span><br></pre></td></tr></table></figure>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def qsort(seq):</span><br><span class="line">    <span class="keyword">if</span> seq == []:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pivot = se<span class="string">q[0]</span></span><br><span class="line">        lessor = qsort([<span class="keyword">x</span> <span class="keyword">for</span> <span class="keyword">x</span> in se<span class="string">q[1:]</span> <span class="keyword">if</span> <span class="keyword">x</span> &lt; pivot])</span><br><span class="line">        greater = qsort([<span class="keyword">x</span> <span class="keyword">for</span> <span class="keyword">x</span> in se<span class="string">q[1:]</span> <span class="keyword">if</span> <span class="keyword">x</span> &gt;= pivot])</span><br><span class="line">        <span class="keyword">return</span> lessor + [pivot] + greater</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name_<span class="number">_</span> == <span class="string">'__main__'</span>:</span><br><span class="line">    seq = [<span class="number">5</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">0</span>]</span><br><span class="line">    <span class="keyword">print</span>(qsort(seq))</span><br></pre></td></tr></table></figure>
-<p>## </p>
+        <h2 id="用装饰器实现"><a href="#用装饰器实现" class="headerlink" title="用装饰器实现"></a>用装饰器实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    INSTANCES = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_singleton</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> INSTANCES:</span><br><span class="line">            INSTANCES[cls] = cls(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> INSTANCES[cls]</span><br><span class="line">    <span class="keyword">return</span> _singleton</span><br><span class="line"></span><br><span class="line"><span class="meta">@singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestSingleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    test_a = <span class="number">1</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        self.test_a = a</span><br><span class="line"></span><br><span class="line">a = TestSingleton(<span class="number">2</span>)</span><br><span class="line">b = TestSingleton(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> a.test_a</span><br><span class="line"><span class="keyword">print</span> b.test_a</span><br><span class="line"><span class="keyword">print</span> id(a)</span><br><span class="line"><span class="keyword">print</span> id(b)</span><br></pre></td></tr></table></figure>
+<h2 id="用共享属性实现"><a href="#用共享属性实现" class="headerlink" title="用共享属性实现"></a>用共享属性实现</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -274,24 +271,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tmp_md/tags/Algorithm/" rel="tag">#Algorithm</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/tmp_md/2016/07/06/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/tmp_md/2016/07/06/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -317,8 +308,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/05/15/排序算法总结/"
-           data-title="排序算法总结" data-url="http://knarfeh.github.io/tmp_md/tmp_md/2015/05/15/排序算法总结/">
+      <div class="ds-thread" data-thread-key="2016/07/08/Python单例模式/"
+           data-title="Python单例模式" data-url="http://knarfeh.github.io/tmp_md/tmp_md/2016/07/08/Python单例模式/">
       </div>
     
   </div>
@@ -446,7 +437,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序："><span class="nav-number">1.</span> <span class="nav-text">冒泡排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序"><span class="nav-number">3.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">4.</span> <span class="nav-text">快速排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用装饰器实现"><span class="nav-number">1.</span> <span class="nav-text">用装饰器实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用共享属性实现"><span class="nav-number">2.</span> <span class="nav-text">用共享属性实现</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
