@@ -4,29 +4,14 @@
 
     
   <url>
-    <loc>http://knarfeh.github.io/tmp_md/tmp_md/2016/07/08/Python%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2016-07-08T12:24:21.000Z</lastmod>
+    <loc>http://knarfeh.github.io/tmp_md/tmp_md/2016/11/22/redis,%20kafka%20%E6%B5%8B%E8%AF%95%E6%8C%87%E5%8C%97/</loc>
+    <lastmod>2016-12-12T15:54:02.000Z</lastmod>
     <data>
         <display>
-        <title>Python单例模式</title>
-        <pubTime>2016-07-08T11:30:19.000Z</pubTime>
+        <title>redis, kafka 测试指北</title>
+        <pubTime>2016-11-22T09:42:21.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://knarfeh.github.io/tmp_md/tmp_md/2015/05/15/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2016-07-07T12:44:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>排序算法总结</title>
-        <pubTime>2015-05-15T05:23:44.000Z</pubTime>
-        
-        <tag>Algorithm</tag>
+        <tag>tmp_md</tag>
          
          
            
@@ -35,21 +20,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://knarfeh.github.io/tmp_md/tmp_md/2016/07/06/test/</loc>
-    <lastmod>2016-07-06T06:25:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>test</title>
-        <pubTime>2016-07-06T06:25:40.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
     
 </urlset>

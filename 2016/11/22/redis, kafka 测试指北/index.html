@@ -41,7 +41,7 @@
 <link href="/tmp_md/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="tmp_md," />
 
 
 
@@ -57,15 +57,24 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Frank's Private Notes">
-<meta property="og:url" content="http://knarfeh.github.io/tmp_md/index.html">
+<meta name="description" content="redis 集群这里的 redis 集群是广义的，包括 master-slave replication 和 redis clustering，
+redis replication功能说明：实现 redis 的主从复制功能，一个主服务器（只能有一个 master）可以有多个从服务器，master 可以用来进行读，写，slave 机器可以用来进行读。
+部署成功后，分别登陆到 master，slave">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis, kafka 测试指北">
+<meta property="og:url" content="http://knarfeh.github.io/tmp_md/2016/11/22/redis, kafka 测试指北/index.html">
 <meta property="og:site_name" content="Frank's Private Notes">
-<meta property="og:description">
+<meta property="og:description" content="redis 集群这里的 redis 集群是广义的，包括 master-slave replication 和 redis clustering，
+redis replication功能说明：实现 redis 的主从复制功能，一个主服务器（只能有一个 master）可以有多个从服务器，master 可以用来进行读，写，slave 机器可以用来进行读。
+部署成功后，分别登陆到 master，slave">
+<meta property="og:image" content="http://7xi5vu.com1.z0.glb.clouddn.com/2016-12-12/alauda-redis-master-slave.png">
+<meta property="og:updated_time" content="2016-12-12T15:54:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Frank's Private Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="redis, kafka 测试指北">
+<meta name="twitter:description" content="redis 集群这里的 redis 集群是广义的，包括 master-slave replication 和 redis clustering，
+redis replication功能说明：实现 redis 的主从复制功能，一个主服务器（只能有一个 master）可以有多个从服务器，master 可以用来进行读，写，slave 机器可以用来进行读。
+部署成功后，分别登陆到 master，slave">
+<meta name="twitter:image" content="http://7xi5vu.com1.z0.glb.clouddn.com/2016-12-12/alauda-redis-master-slave.png">
 
 
 
@@ -83,7 +92,7 @@
   };
 </script>
 
-  <title> Frank's Private Notes </title>
+  <title> redis, kafka 测试指北 | Frank's Private Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -111,9 +120,7 @@
   
   
 
-  <div class="container one-collumn  
-   page-home 
- ">
+  <div class="container one-collumn  page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -190,9 +197,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -212,10 +219,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/tmp_md/2016/11/22/redis, kafka 测试指北/" itemprop="url">
-                  redis, kafka 测试指北
-                </a>
+                redis, kafka 测试指北
               
             
           </h1>
@@ -261,9 +265,7 @@
       
 
       
-        
-          
-            <h1 id="redis-集群"><a href="#redis-集群" class="headerlink" title="redis 集群"></a>redis 集群</h1><p>这里的 redis 集群是广义的，包括 master-slave replication 和 redis clustering，</p>
+        <h1 id="redis-集群"><a href="#redis-集群" class="headerlink" title="redis 集群"></a>redis 集群</h1><p>这里的 redis 集群是广义的，包括 master-slave replication 和 redis clustering，</p>
 <h2 id="redis-replication"><a href="#redis-replication" class="headerlink" title="redis replication"></a>redis replication</h2><h3 id="功能说明："><a href="#功能说明：" class="headerlink" title="功能说明："></a>功能说明：</h3><p>实现 redis 的主从复制功能，一个主服务器（只能有一个 master）可以有多个从服务器，master 可以用来进行读，写，slave 机器可以用来进行读。</p>
 <p>部署成功后，分别登陆到 master，slave 的机器上，大致是这样的：</p>
 <p><img src="http://7xi5vu.com1.z0.glb.clouddn.com/2016-12-12/alauda-redis-master-slave.png" alt="alauda-redis-master-slave"></p>
@@ -295,32 +297,37 @@ print (&quot;%s:%d:%d: key=%s value=%s&quot; % (message.topic, message.partition
 <h1 id="Subscribe-to-a-regex-topic-pattern"><a href="#Subscribe-to-a-regex-topic-pattern" class="headerlink" title="Subscribe to a regex topic pattern"></a>Subscribe to a regex topic pattern</h1><p>consumer = KafkaConsumer()<br>consumer.subscribe(pattern=’^awesome.*’)</p>
 <h1 id="Use-multiple-consumers-in-parallel-w-0-9-kafka-brokers"><a href="#Use-multiple-consumers-in-parallel-w-0-9-kafka-brokers" class="headerlink" title="Use multiple consumers in parallel w/ 0.9 kafka brokers"></a>Use multiple consumers in parallel w/ 0.9 kafka brokers</h1><h1 id="typically-you-would-run-each-on-a-different-server-process-CPU"><a href="#typically-you-would-run-each-on-a-different-server-process-CPU" class="headerlink" title="typically you would run each on a different server / process / CPU"></a>typically you would run each on a different server / process / CPU</h1><p>consumer1 = KafkaConsumer(‘my-topic’,<br>                          group_id=’my-group’,<br>                          bootstrap_servers=’my.server.com’)<br>consumer2 = KafkaConsumer(‘my-topic’,<br>                          group_id=’my-group’,<br>                          bootstrap_servers=’my.server.com’)<br>```</p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tmp_md/tags/tmp-md/" rel="tag">#tmp_md</a>
+          
+        </div>
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -328,6 +335,14 @@ print (&quot;%s:%d:%d: key=%s value=%s&quot; % (message.topic, message.partition
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/22/redis, kafka 测试指北/"
+           data-title="redis, kafka 测试指北" data-url="http://knarfeh.github.io/tmp_md/tmp_md/2016/11/22/redis, kafka 测试指北/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -347,8 +362,17 @@ print (&quot;%s:%d:%d: key=%s value=%s&quot; % (message.topic, message.partition
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/6964284?v=3&s=460"
@@ -433,6 +457,23 @@ print (&quot;%s:%d:%d: key=%s value=%s&quot; % (message.topic, message.partition
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-集群"><span class="nav-number">1.</span> <span class="nav-text">redis 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis-replication"><span class="nav-number">1.1.</span> <span class="nav-text">redis replication</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能说明："><span class="nav-number">1.1.1.</span> <span class="nav-text">功能说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#refer"><span class="nav-number">1.1.2.</span> <span class="nav-text">refer:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis-cluster-mode"><span class="nav-number">1.2.</span> <span class="nav-text">redis cluster mode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能说明：-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">功能说明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#refer："><span class="nav-number">1.2.2.</span> <span class="nav-text">refer：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka-集群"><span class="nav-number">2.</span> <span class="nav-text">kafka 集群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#To-consume-latest-messages-and-auto-commit-offsets"><span class="nav-number">3.</span> <span class="nav-text">To consume latest messages and auto-commit offsets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#consume-earliest-available-messages-don’t-commit-offsets"><span class="nav-number">4.</span> <span class="nav-text">consume earliest available messages, don’t commit offsets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#consume-json-messages"><span class="nav-number">5.</span> <span class="nav-text">consume json messages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#consume-msgpack"><span class="nav-number">6.</span> <span class="nav-text">consume msgpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StopIteration-if-no-message-after-1sec"><span class="nav-number">7.</span> <span class="nav-text">StopIteration if no message after 1sec</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subscribe-to-a-regex-topic-pattern"><span class="nav-number">8.</span> <span class="nav-text">Subscribe to a regex topic pattern</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-multiple-consumers-in-parallel-w-0-9-kafka-brokers"><span class="nav-number">9.</span> <span class="nav-text">Use multiple consumers in parallel w/ 0.9 kafka brokers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typically-you-would-run-each-on-a-different-server-process-CPU"><span class="nav-number">10.</span> <span class="nav-text">typically you would run each on a different server / process / CPU</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -516,6 +557,167 @@ print (&quot;%s:%d:%d: key=%s value=%s&quot; % (message.topic, message.partition
   
 
   
+  
+<script type="text/javascript" src="/tmp_md/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
